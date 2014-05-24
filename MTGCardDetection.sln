@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCD.Core", "MCD.Core\MCD.Core.csproj", "{7CBF85BE-3772-409B-B762-84F56DD0A8A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCD.UI", "MCD.UI\MCD.UI.csproj", "{8305C272-595B-4F10-AB23-786EC043FB56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Clients", "1. Clients", "{A65CBEF8-DCA9-430B-B0C0-F51A3343660C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Core", "2. Core", "{C568B92D-BC1B-4A11-9695-037FC3456443}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CBF85BE-3772-409B-B762-84F56DD0A8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBF85BE-3772-409B-B762-84F56DD0A8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBF85BE-3772-409B-B762-84F56DD0A8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBF85BE-3772-409B-B762-84F56DD0A8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8305C272-595B-4F10-AB23-786EC043FB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8305C272-595B-4F10-AB23-786EC043FB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8305C272-595B-4F10-AB23-786EC043FB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8305C272-595B-4F10-AB23-786EC043FB56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8305C272-595B-4F10-AB23-786EC043FB56} = {A65CBEF8-DCA9-430B-B0C0-F51A3343660C}
+		{7CBF85BE-3772-409B-B762-84F56DD0A8A4} = {C568B92D-BC1B-4A11-9695-037FC3456443}
+	EndGlobalSection
+EndGlobal
