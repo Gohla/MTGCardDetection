@@ -1,5 +1,6 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
+using MCD.Interfaces;
 using System;
 using System.Drawing;
 using System.Reactive.Subjects;

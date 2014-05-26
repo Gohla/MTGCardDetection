@@ -37,6 +37,12 @@
     <Reference Include="AForge">
       <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
     </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
     <Reference Include="AForge.Video">
       <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
     </Reference>
@@ -97,6 +103,10 @@
     <ProjectReference Include="..\MCD.Core\MCD.Core.csproj">
       <Project>{7cbf85be-3772-409b-b762-84f56dd0a8a4}</Project>
       <Name>MCD.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCD.Interfaces\MCD.Interfaces.csproj">
+      <Project>{5acbc821-15a1-46b9-84fb-15c9cd6ea711}</Project>
+      <Name>MCD.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

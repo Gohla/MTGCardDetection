@@ -1,4 +1,5 @@
 ﻿using AForge.Video.DirectShow;
+using MCD.Interfaces;
 
 namespace MCD.Core
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace MCD.Core
+namespace MCD.Interfaces
 {
     public interface ICaptureDevice
     {
