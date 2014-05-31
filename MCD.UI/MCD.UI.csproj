@@ -100,6 +100,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dependencies\pHashNet\pHash.Net.csproj">
+      <Project>{663a39ae-ca7b-4ddc-bf22-39d5f6019984}</Project>
+      <Name>pHash.Net</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MCD.Core\MCD.Core.csproj">
       <Project>{7cbf85be-3772-409b-b762-84f56dd0a8a4}</Project>
       <Name>MCD.Core</Name>
@@ -110,6 +114,10 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy /Y "$(SolutionDir)Dependencies\pHash\$(ConfigurationName)\pHash.dll" "$(TargetDir)"
+xcopy /Y "$(SolutionDir)Dependencies\Image\*" "$(TargetDir)"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

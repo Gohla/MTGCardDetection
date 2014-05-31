@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ACBC821-15A1-46B9-84FB-15C9CD6EA711}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{48AEB9B6-2A5B-46E2-842E-72147A4C3E70}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MCD.Interfaces</RootNamespace>
-    <AssemblyName>MCD.Interfaces</AssemblyName>
+    <RootNamespace>MCD.CMD</RootNamespace>
+    <AssemblyName>MCD.CMD</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,26 +32,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ManyConsole">
+      <HintPath>..\packages\ManyConsole.0.4.2.17\lib\ManyConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="NDesk.Options">
+      <HintPath>..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Reactive.Interfaces">
-      <HintPath>..\packages\Rx-Interfaces.2.2.4\lib\net45\System.Reactive.Interfaces.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IReferenceCard.cs" />
-    <Compile Include="IReferenceCardDatabase.cs" />
-    <Compile Include="IReferenceCardDetector.cs" />
-    <Compile Include="MTGColor.cs" />
-    <Compile Include="ICaptureDevice.cs" />
-    <Compile Include="IDetectedCard.cs" />
+    <Compile Include="DetectCommand.cs" />
+    <Compile Include="GathererConvertCommand.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MCD.Core\MCD.Core.csproj">
+      <Project>{7cbf85be-3772-409b-b762-84f56dd0a8a4}</Project>
+      <Name>MCD.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCD.Interfaces\MCD.Interfaces.csproj">
+      <Project>{5acbc821-15a1-46b9-84fb-15c9cd6ea711}</Project>
+      <Name>MCD.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy /Y "$(SolutionDir)Dependencies\pHash\$(ConfigurationName)\pHash.dll" "$(TargetDir)"
+xcopy /Y "$(SolutionDir)Dependencies\Image\*" "$(TargetDir)"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

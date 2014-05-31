@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge">
@@ -74,11 +76,18 @@
     <Compile Include="BitmapExtensions.cs" />
     <Compile Include="AForgeCardDetector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceCardDatabase.cs" />
+    <Compile Include="ReferenceCard.cs" />
+    <Compile Include="ReferenceCardRadialHashDetector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dependencies\pHashNet\pHash.Net.csproj">
+      <Project>{663a39ae-ca7b-4ddc-bf22-39d5f6019984}</Project>
+      <Name>pHash.Net</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MCD.Interfaces\MCD.Interfaces.csproj">
       <Project>{5acbc821-15a1-46b9-84fb-15c9cd6ea711}</Project>
       <Name>MCD.Interfaces</Name>

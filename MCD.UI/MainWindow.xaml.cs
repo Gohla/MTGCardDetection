@@ -1,18 +1,10 @@
-﻿using AForge;
-using AForge.Imaging;
-using AForge.Imaging.Filters;
-using AForge.Math.Geometry;
-using MCD.Core;
+﻿using MCD.Core;
+using MCD.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Reactive.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Linq;
-using MCD.Interfaces;
 
 namespace MCD.UI
 {
@@ -37,7 +29,7 @@ namespace MCD.UI
                 return;
 
             _captureDevice.Frames
-                //.Sample(TimeSpan.FromSeconds(0.1))
+                .Sample(TimeSpan.FromSeconds(1 / 30))
                 .Select(Process)
                 .ObserveOn(Webcam)
                 .Subscribe(Display);
